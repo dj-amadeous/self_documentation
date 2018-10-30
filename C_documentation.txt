@@ -1,0 +1,29 @@
+This is a documentation file for random things that I find important in the C language.
+The purpose is to avoid me having to keep loking up things I've already researched before.
+This document may need to be broken into multiple parts in the future
+
+
+			INPUT avoiding scanf function call (using only Fgets)
+we generally want to avoid the use of scanf for the purpose of security of input validation.
+it also helps us simplify the error checking of all input.
+Sometimes we may find ourselves in a situation where it makes sense to use scanf, but at any point if we later decide we need to use fgets for input then a trap door is exposed. 
+Using scanf with fgets in the same sequence of asking for input is a trap and I've found in my experience that it should be avoided at all costs.
+The only time it makes sense so far in my experience to use scanf is to accept single number(integer or float) inputs from the user. However we can get around this with someone fgets maneuvering.
+
+									example: using fgets, and then converting to integer
+int getSize(){
+    int numEl;
+    char term[3];
+    printf("Enter size of Array:");
+    fgets(term, 6, stdin);
+    numEl = strtol(term, NULL, 10);
+
+    return numEl;
+}
+gist example: https://gist.github.com/dj-amadeous/165487ccc0bcd3f60ede6f4f5ea34e93
+
+here we use fgets to collect the input, then convert that input into an integer and store it in the variable we're interested in. 
+fgets can only return strings, and it only returns them to char pointers. So we must make an array of characters. In general your use of fgets must be passing arrays to fgets. 
+the functionr eturns the integer that we converted from the user input.
+
+(any further comments about how this is bad practice is welcome, I only hacked this together from internet research. I have no idea if this is good or not).
