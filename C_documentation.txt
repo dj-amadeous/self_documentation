@@ -27,3 +27,29 @@ fgets can only return strings, and it only returns them to char pointers. So we 
 the functionr eturns the integer that we converted from the user input.
 
 (any further comments about how this is bad practice is welcome, I only hacked this together from internet research. I have no idea if this is good or not).
+
+
+
+			Calloc vs Malloc documentation
+calloc 0's out the assigned memory, while malloc does nothing.
+void* calloc(size_t num, size_t size);
+
+num = number of objects // e.g an array of 4 integers
+size = size of each object // e.g sizeof(integer)
+
+									example: calloc'ing a pointer for an integer
+									https://gist.github.com/dj-amadeous/7dc27bc4e52ec08d3cfb7d8096f31d7e
+int calloc_example(){
+	int* p1 = calloc(4, sizeof(int)); // an array of 4 integers
+	int* p2 = calloc(1, sizeof(int[4])); // same thing, but mixed up where the size and space goes. (it doesn't matter)
+	int* p3 = calloc(4, sizeof *p3); // same thing but without using int, instead using the dereferenced version of p3
+
+	if(p2) {
+		for(int n = 0; n < 4; n++) // printing array
+			printf("p2[%d] == %d\n", n, p2[n]);
+	}
+
+	free(p1);
+	free(p2);
+	free(p3);
+}
