@@ -53,3 +53,17 @@ int calloc_example(){
 	free(p2);
 	free(p3);
 }
+
+
+			size_t definition
+size_t is just type unsigned int. So only positive integers. It helps insure you don't pass negative numbers into malloc and calloc, as well as can be used in a loop counter.
+
+
+
+
+
+
+
+
+
+				how to tokenize string input and separate
