@@ -1,0 +1,31 @@
+VIRTUAL ENVIRONMENTS
+python virtual environments let you keep packages separated across projects so that theyy don't interfere with eachother.
+To install virtualenv
+macOS and Linux:
+$ python3 -m pip install --user virtualenv
+Windows:
+py -m pip install --user virtualenv
+
+Creating a virtual environment in your project
+macOS and linux:
+python3 -m venv env
+Windows:
+py -m venv env
+
+Always add venv to .gitignore
+
+before working on your project, you'll have to activte the venv every startup:
+macOS and linux:
+source env/bin/activate
+Windows:
+.\env\Scripts\activate
+
+
+PYQT5 and PYQT5-tools 
+pyqt5 should be installed in a virtual environment
+installation:
+(venv)$ pip install pyqt5
+(venv)$ pip install pyqt5-tools [additional options exist such as ~=5.11 and --pre which lets you use dev releases]
+
+to use designer:
+(venv)$ pyqt5designer [OPTIONS]

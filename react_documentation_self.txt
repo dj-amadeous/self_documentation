@@ -1,2 +1,18 @@
 react documentation (last edit 12-18-18)
 
+react apps big picture
+	*runs in browser
+	*uses 'components' which allows you to use object oriented principles in the full set of web languages. combining html and css into classes basically
+
+components: componenets are just functions whose return value is the code rendered from the DOM.
+returned value must be in JSX.
+babel can turn JSX into HTML/JS.
+
+arguments are passed into functions as JSX, and functions are called in reactDOM.render().
+you pass arguments to a react component by setting the arguments equal, similar to how you set classnames and id's in html.
+
+why use react?
+	without react you'd have a difficult time managing state. You'd have to individually target every class name over and over again leading to a lot of repeated code.
+
+single page applications have an advantage over multipage being, the user only has to ping the server once to get all the code. If you can manage everything browser side it makes your app a lot faster, since react can handle everything that you might want to do all on 1 html file that only gets delivered from the server once.
+

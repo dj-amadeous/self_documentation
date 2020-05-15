@@ -1,0 +1,6 @@
+since OSX uses the clang compiler, you can't use the
+#include <bits/stdc++.h>
+since it doesn't exist.
+
+it must be replaced with its equivalent
+https://gist.github.com/reza-ryte-club/97c39f35dab0c45a5d924dd9e50c445f

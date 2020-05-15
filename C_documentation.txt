@@ -24,9 +24,10 @@ gist example: https://gist.github.com/dj-amadeous/165487ccc0bcd3f60ede6f4f5ea34e
 
 here we use fgets to collect the input, then convert that input into an integer and store it in the variable we're interested in. 
 fgets can only return strings, and it only returns them to char pointers. So we must make an array of characters. In general your use of fgets must be passing arrays to fgets. 
-the functionr eturns the integer that we converted from the user input.
+the function returns the integer that we converted from the user input.
 
 (any further comments about how this is bad practice is welcome, I only hacked this together from internet research. I have no idea if this is good or not).
+Notice that you have to know ahead of time how many digits the number has, which is a drawback but also the reason why fgets is safer than scanf.
 
 
 

@@ -1,0 +1,2 @@
+you can run a bash script in the current shell window by typing
+source [bash script] 

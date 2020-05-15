@@ -1,0 +1,1 @@
+the gcc installation is in: /usr/local/Cellar/gcc/9.2.0_3

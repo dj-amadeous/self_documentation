@@ -1,0 +1,30 @@
+This is a documentation file for various things that have caused me problems in Python
+
+Tuples:
+	Tuples can be unpacked or "scattered", and packed "gathered". This is the primary way that we pass variable length arguments to a python function.
+examples
+Gathering:
+def printall(*args):
+	print(args)
+>>> printall(1, 2.0, '3')
+(1, 2.0, '3')
+the printall function is defined with one argument, a tuple. We dont' define how large the tuple is, we can pass as large of a tuple as we wish. In this manner the tuple can be any length N
+Scattering:
+>>> t = (7, 3)
+>>> divmod(t)
+TypeError: divmod expected 2 arguments, got 1
+In this instance divmod expects 2 arguments but we pass a tuple of 2 arguments. Putting a star in front of the tuple "unpacks it" or scatters the tuple to be a line of various arguments
+>>> divmod(*t)
+(2, 1)
+
+
+
+
+Built In Functions:
+	String Functions
+
+	str.split()
+	The str.split() function splits a function based on a delimiter. The delimiter will match the string exactly. so "1<>2<3".split('<>') returns ["1", "2<3"]
+
+	str.strip()
+	the str.strip() function strips a string of all the characters that were passed to the string and returns the result as a string. It does NOT make a new list so should not be confused with the split function
